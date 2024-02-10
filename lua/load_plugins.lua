@@ -30,5 +30,16 @@ require("lazy").setup({
 	{'nvim-telescope/telescope.nvim',tag='0.1.5',dependencies={'nvim-lua/plenary.nvim' }},
 	{"lewis6991/gitsigns.nvim", config = function() 
 		require('gitsigns').setup()
-	end}
+	end},
+	{
+		'nvimdev/dashboard-nvim',
+		event = 'VimEnter',
+		config = function()
+		require('dashboard').setup { 
+
+		}
+		end,
+		dependencies = { {'nvim-tree/nvim-web-devicons'}}
+	},
+	{ 'nvimdev/dashboard-nvim', event = 'VimEnter', dependencies = { {'nvim-tree/nvim-web-devicons'}} }
 }, options)
