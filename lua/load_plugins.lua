@@ -31,15 +31,24 @@ require("lazy").setup({
 	{"lewis6991/gitsigns.nvim", config = function() 
 		require('gitsigns').setup()
 	end},
-	{
-		'nvimdev/dashboard-nvim',
-		event = 'VimEnter',
-		config = function()
-		require('dashboard').setup { 
-
-		}
-		end,
-		dependencies = { {'nvim-tree/nvim-web-devicons'}}
-	},
-	{ 'nvimdev/dashboard-nvim', event = 'VimEnter', dependencies = { {'nvim-tree/nvim-web-devicons'}} }
+	{"voldikss/vim-floaterm"},
+	-- LSP Plugins
+	{'neovim/nvim-lspconfig'},
+	{'hrsh7th/cmp-nvim-lsp'},
+	{'hrsh7th/cmp-buffer'},
+	{'hrsh7th/cmp-path'},
+	{'hrsh7th/cmp-cmdline'},
+	{'hrsh7th/nvim-cmp'},
+	{'hrsh7th/cmp-vsnip'},
+	{'hrsh7th/vim-vsnip'},
+	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons', config = function()
+		local bufferline = require('bufferline')
+		bufferline.setup({
+			options = {
+				style_preset = bufferline.style_preset.no_italic,
+				name_formatter = function(buf) return " " .. buf.name end
+			}
+		})
+	end},
+	{"folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, opts = {icons = false},}
 }, options)

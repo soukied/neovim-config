@@ -30,8 +30,6 @@ opt.incsearch = true
 
 opt.updatetime = 50
 
-vim.cmd.colorscheme("tokyonight")
-
 vim.api.nvim_create_augroup("EmmetEnable", {clear = false})
 vim.api.nvim_create_autocmd({"FileType"}, {
 	group = "EmmetEnable",
