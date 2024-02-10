@@ -1,0 +1,5 @@
+require "load_variables"
+require "load_plugins"
+require "load_configs"
+require "load_lualine"
+require "load_ts"
