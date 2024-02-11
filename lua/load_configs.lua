@@ -13,6 +13,8 @@ opt.laststatus = 2
 opt.number = true
 opt.relativenumber = true
 
+opt.showmode = false
+
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4

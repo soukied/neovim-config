@@ -16,6 +16,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	-- Firenvim
+	{
+		'glacambre/firenvim',
+		lazy = not vim.g.started_by_firenvim,
+		build = function()
+			vim.fn["firenvim#install"](0)
+		end
+	},
 	-- Colorscheme
 	{"folke/tokyonight.nvim"},
 	{"ellisonleao/gruvbox.nvim"},
@@ -38,10 +46,10 @@ require("lazy").setup({
               unstaged = "",
               staged = "󰄬",
               unmerged = "",
-              renamed = "➜",
+              renamed = "",
               untracked = "★",
               deleted = "",
-              ignored = "◌",
+              ignored = "",
             },
           },
         },
@@ -50,6 +58,8 @@ require("lazy").setup({
 	{'nvim-telescope/telescope.nvim',tag='0.1.5',dependencies={'nvim-lua/plenary.nvim' }},
 	{"lewis6991/gitsigns.nvim", opts={numhl = true}},
 	{"voldikss/vim-floaterm"},
+	-- Discord Rich Presence
+	{'andweeb/presence.nvim', opts={}},
 	-- LSP Plugins
 	{'neovim/nvim-lspconfig'},
 	{'hrsh7th/cmp-nvim-lsp'},
