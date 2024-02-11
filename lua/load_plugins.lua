@@ -21,7 +21,7 @@ require("lazy").setup({
 	{"ellisonleao/gruvbox.nvim"},
 	{"dracula/vim", name = "dracula"},
 	{'tanvirtin/monokai.nvim'},
-	{"tomasiser/vim-code-dark"},
+	{'Mofiqul/vscode.nvim', opts={}},
 	{"catppuccin/nvim", name = "catppuccin", opts = {}},
 	-- Treesitter
 	{"nvim-treesitter/nvim-treesitter", build =  ":TSUpdate" },
@@ -71,6 +71,8 @@ require("lazy").setup({
 		},
 	}},
 	{ "ray-x/lsp_signature.nvim"},
+	-- Autopair
+	{'windwp/nvim-autopairs', event="InsertEnter", opts={}},
 	-- Buffer and status line
 	{'nvim-lualine/lualine.nvim', dependencies ={'nvim-tree/nvim-web-devicons'}},
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons', config = function()
