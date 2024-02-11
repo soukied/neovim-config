@@ -1,6 +1,8 @@
 -- Set up nvim-cmp.
 local cmp = require 'cmp'
 
+local gdscript_port = "6005"
+
 local options = {
 	clangd = {
 		single_file_support = true
@@ -21,7 +23,7 @@ local options = {
 		single_file_support = true
 	},
 	gdscript = {
-		cmd = { "ncat", "localhost", "6005" },
+		cmd = { "ncat", "localhost", gdscript_port },
 	}
 }
 

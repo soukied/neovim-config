@@ -32,6 +32,7 @@ require("lazy").setup({
 	{'Mofiqul/vscode.nvim', opts={}},
 	{"catppuccin/nvim", name = "catppuccin", opts = {}},
 	-- Treesitter
+	{'sheerun/vim-polyglot'},
 	{"nvim-treesitter/nvim-treesitter", build =  ":TSUpdate" },
 	{"folke/neodev.nvim", opts = {}},
 	{"mattn/emmet-vim"},
@@ -59,7 +60,7 @@ require("lazy").setup({
 	{"lewis6991/gitsigns.nvim", opts={numhl = true}},
 	{"voldikss/vim-floaterm"},
 	-- Discord Rich Presence
-	{'andweeb/presence.nvim', opts={}},
+	{'andweeb/presence.nvim', opts={client_id = os.getenv("DISCORD_CLIENT_ID") or ""}},
 	-- LSP Plugins
 	{'neovim/nvim-lspconfig'},
 	{'hrsh7th/cmp-nvim-lsp'},
