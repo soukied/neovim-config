@@ -8,7 +8,7 @@ opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
-opt.laststatus = 3
+opt.laststatus = 2
 
 opt.number = true
 opt.relativenumber = true
@@ -36,3 +36,19 @@ vim.api.nvim_create_autocmd({"FileType"}, {
 	pattern = {"html"},
 	command = "EmmetInstall"
 })
+
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '● ',
+  },
+  severity_sort = true,
+  float = {
+    source = "always",
+  },
+})
+
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
