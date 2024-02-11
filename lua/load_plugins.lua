@@ -61,7 +61,15 @@ require("lazy").setup({
 	{'hrsh7th/vim-vsnip'},
 	{"onsails/lspkind.nvim"},
 	{"folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, opts = {icons = false},},
-	{'akinsho/toggleterm.nvim', version = "*", opts = {}},
+	{'akinsho/toggleterm.nvim', version = "*", opts = {
+		open_mapping = [[<C-\>]],
+		size = 7,
+		highlights = {
+			Normal = {
+				link = "Normal"
+			},
+		},
+	}},
 	{ "ray-x/lsp_signature.nvim"},
 	-- Buffer and status line
 	{'nvim-lualine/lualine.nvim', dependencies ={'nvim-tree/nvim-web-devicons'}},

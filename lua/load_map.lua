@@ -14,10 +14,13 @@ vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>', default_opts)
 vim.keymap.set('n', '<leader>n', ':bn<cr>', default_opts)
 vim.keymap.set('n', '<leader>p', ':bp<cr>', default_opts)
 
+-- Toggle Undotree
+vim.keymap.set('n', '<leader>u', ':UndotreeToggle<CR>', default_opts)
+
 -- Toggle Trouble
 vim.keymap.set('n', '<leader>q', ':TroubleToggle<CR>', default_opts)
 
--- Toggle 
+-- Movement with leader key
 vim.keymap.set('n', '<leader>wh', '<C-w>h', default_opts)
 vim.keymap.set('n', '<leader>wj', '<C-w>j', default_opts)
 vim.keymap.set('n', '<leader>wk', '<C-w>k', default_opts)

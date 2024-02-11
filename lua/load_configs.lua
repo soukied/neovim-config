@@ -52,3 +52,13 @@ for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  nested = true,
+  group = vim.api.nvim_create_augroup("NvimTreeAutoclose", { clear = false}),
+  callback = function()
+    if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
+      vim.cmd "quit"
+    end
+  end
+})

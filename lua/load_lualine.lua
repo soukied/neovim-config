@@ -5,7 +5,7 @@ if not status then return end
 lualine.setup({
 	options = {
 		disabled_filetypes = {
-			statusline = {"NvimTree"}
+			statusline = {"NvimTree", "Trouble", "toggleterm"}
 		}
 	}
 })
