@@ -72,7 +72,7 @@ require("lazy").setup({
 	}},
 	{ "ray-x/lsp_signature.nvim"},
 	-- Autopair
-	{'windwp/nvim-autopairs', event="InsertEnter", opts={}},
+	{'windwp/nvim-autopairs', event="InsertEnter", opts={disable_filetype={"", "TelescopePrompt"}}},
 	-- Buffer and status line
 	{'nvim-lualine/lualine.nvim', dependencies ={'nvim-tree/nvim-web-devicons'}},
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons', config = function()
