@@ -25,12 +25,14 @@ require("lazy").setup({
 		end,
 	},
 	-- Colorscheme
+	{'shaunsingh/nord.nvim'},
+	{'navarasu/onedark.nvim', opts={style="deep"}},
 	{ "folke/tokyonight.nvim" },
 	{ "ellisonleao/gruvbox.nvim" },
-	{ "dracula/vim",                     name = "dracula" },
 	{ "tanvirtin/monokai.nvim" },
 	{ "Mofiqul/vscode.nvim",             opts = {} },
 	{ "catppuccin/nvim",                 name = "catppuccin", opts = {} },
+	{'Mofiqul/dracula.nvim'},
 	-- Treesitter
 	{ "sheerun/vim-polyglot" },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },

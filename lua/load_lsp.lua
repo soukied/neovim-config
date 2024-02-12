@@ -104,7 +104,9 @@ local lsp_config = require("lspconfig")
 for langserver, opts in pairs(options) do
 	local n_opts = {}
 	for k, v in pairs(opts) do
-		n_opts[k] = v
+		if k ~= "on_attach" then
+			n_opts[k] = v
+		end
 	end
 	n_opts.capabilities = capabilities
 	n_opts.on_attach = function(client, bufnr)
