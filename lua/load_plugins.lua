@@ -116,7 +116,7 @@ require("lazy").setup({
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		opts = { disable_filetype = { "", "TelescopePrompt" } },
+		-- opts = { disable_filetype = { "", "TelescopePrompt" } },
 	},
 	-- Buffer and status line
 	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
