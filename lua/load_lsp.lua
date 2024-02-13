@@ -13,10 +13,14 @@ local options = {
 	tsserver = {
 		single_file_support = true,
 	},
+	haxe_language_server = {
+		single_file_support = true,
+	},
 	lua_ls = {
 		single_file_support = true,
 		on_attach = function(client, _)
 			client.resolved_capabilities.document_formatting = false
+			vim.cmd("TroubleToggle")
 		end,
 	},
 	html = {
@@ -28,6 +32,9 @@ local options = {
 	gdscript = {
 		cmd = { "ncat", "localhost", gdscript_port },
 	},
+	rust_analyzer = {
+
+	}
 }
 
 local lspkind = require("lspkind")
@@ -99,10 +106,15 @@ cmp.setup.filetype("gitcommit", {
 -- Set up lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+require("mason").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = {"haxe_language_server", "lua_ls", "html", "cssls", "tsserver", "clangd", "pyright"}
+})
+
 local lsp_config = require("lspconfig")
 
 for langserver, opts in pairs(options) do
-	local n_opts = {}
+	local n_opts = {} -- n_opts = new options
 	for k, v in pairs(opts) do
 		if k ~= "on_attach" then
 			n_opts[k] = v
