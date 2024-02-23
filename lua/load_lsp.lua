@@ -30,7 +30,7 @@ local options = {
 		single_file_support = true,
 	},
 	gdscript = {
-		cmd = { "ncat", "localhost", gdscript_port },
+		cmd = { "ncat", "localhost", gdscript_port }
 	},
 	rust_analyzer = {
 
@@ -107,6 +107,7 @@ cmp.setup.filetype("gitcommit", {
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 require("mason").setup()
+
 require("mason-lspconfig").setup({
 	ensure_installed = {"haxe_language_server", "lua_ls", "html", "cssls", "tsserver", "clangd", "pyright"}
 })

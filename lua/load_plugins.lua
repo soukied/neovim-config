@@ -25,17 +25,20 @@ require("lazy").setup({
 		end,
 	},
 	-- Colorscheme
+	{ 'rose-pine/neovim',                name = 'rosepine',        opts = {} },
 	{ 'shaunsingh/nord.nvim' },
 	{ 'navarasu/onedark.nvim',           opts = { style = "deep" } },
 	{ "folke/tokyonight.nvim" },
 	{ "ellisonleao/gruvbox.nvim" },
 	{ "tanvirtin/monokai.nvim" },
 	{ "Mofiqul/vscode.nvim",             opts = {} },
-	{ "catppuccin/nvim",                 name = "catppuccin", opts = {} },
+	{ "catppuccin/nvim",                 name = "catppuccin",      opts = {} },
 	{ 'Mofiqul/dracula.nvim' },
 	-- Treesitter
 	{ "sheerun/vim-polyglot" },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	-- Zen Mode
+	{ 'folke/zen-mode.nvim',             opts = {} },
 	{ "folke/neodev.nvim",               opts = {} },
 	{ "mattn/emmet-vim" },
 	{ "xiyaowong/transparent.nvim",      opts = {} },
@@ -71,9 +74,14 @@ require("lazy").setup({
 	{ "voldikss/vim-floaterm" },
 	-- Discord Rich Presence
 	{ "andweeb/presence.nvim",            opts = { client_id = os.getenv("DISCORD_CLIENT_ID") or "" } },
+	-- Mason
+	{ 'williamboman/mason.nvim' },
+	-- Debugger
+	{ "mfussenegger/nvim-dap" },
+	{ 'jay-babu/mason-nvim-dap.nvim' },
+	{ 'rcarriga/nvim-dap-ui' },
 	-- LSP Plugins
 	{ "neovim/nvim-lspconfig" },
-	{ 'williamboman/mason.nvim' },
 	{ 'williamboman/mason-lspconfig.nvim' },
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/cmp-buffer" },
@@ -118,7 +126,7 @@ require("lazy").setup({
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		-- opts = { disable_filetype = { "", "TelescopePrompt" } },
+		opts = { disable_filetype = { "", "TelescopePrompt" } },
 	},
 	-- Buffer and status line
 	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },

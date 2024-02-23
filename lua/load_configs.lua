@@ -57,6 +57,12 @@ for type, icon in pairs(signs) do
 end
 
 vim.api.nvim_create_autocmd("BufEnter", {
+	group = vim.api.nvim_create_augroup("GDScriptFiletypes", { clear = false }),
+	pattern = { "*.gd" },
+	command = "set ft=gdscript",
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
 	nested = true,
 	group = vim.api.nvim_create_augroup("NvimTreeAutoclose", { clear = false }),
 	callback = function()
